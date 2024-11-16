@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+}
+
+#title {
+    color: orangered;
+}
+
+#previousDirectoryLink {
+    color: red;
+}
