@@ -1,6 +1,0 @@
-Salted Banana recipe
-Required ingredients:
-- Random string
-- Banana
-Mix the random string and the banana together.
-Remember, it's more secure when salted!

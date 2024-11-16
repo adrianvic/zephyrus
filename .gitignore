@@ -3,3 +3,4 @@ package-lock.json
 certificate.crt
 private.key
 main.js
+dist

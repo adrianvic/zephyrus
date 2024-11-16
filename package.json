@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "ts-node main.ts"
+    "start": "ts-node main.ts",
+    "build" : "npx tsc"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
@@ -15,10 +16,5 @@
   },
   "dependencies": {
     "mime": "^4.0.4"
-  },
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "esModuleInterop": true
   }
 }
