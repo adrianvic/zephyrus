@@ -4,3 +4,6 @@ certificate.crt
 private.key
 main.js
 dist
+config.json
+www
+custom.css

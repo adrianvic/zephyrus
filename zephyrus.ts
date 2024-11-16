@@ -24,7 +24,8 @@ function requestHandler(request: IncomingMessage, response: ServerResponse) {
     const path_ = decodeURI(parsed.pathname || '/');
     const serversidePath = path.join(config.serverRoot + path_);
     const defaultPagePath = path.join(config.serverRoot + config.defaultPage);
-    const finalPath = config.useDefaultPage && request.url == '/' ? path.normalize(defaultPagePath) : serversidePath;
+    const finalPath = (config.useDefaultPage && request.url == '/') ? path.normalize(defaultPagePath) : serversidePath;
+    // console.log(finalPath)
 
     function showError(code: number, log: boolean = config.logErrors, info: string = 'no more information about the error was provided.') {
         if (log) {
@@ -125,6 +126,6 @@ function requestHandler(request: IncomingMessage, response: ServerResponse) {
         })
 }
 
-server.listen(3000, () => {
-    console.log("Started at https://localhost:3000")
+server.listen(config.port, () => {
+    console.log(`Started at http${config.useHTTPS ? 's' : ''}://localhost:${config.port}`)
 })
