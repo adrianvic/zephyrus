@@ -1,10 +1,11 @@
-const config = require('./config.json')
-import fs, { stat } from 'fs';
-import http, { IncomingMessage, ServerResponse } from 'http';
-import https from 'https';
-import url from 'url';
-import path, { dirname } from 'path';
-import mime from 'mime';
+const config = require('./config.json');
+import * as fs from 'fs';
+import * as http from 'http';
+import { IncomingMessage, ServerResponse } from 'http';
+import * as https from 'https';
+import * as url from 'url';
+import * as path from 'path';
+import * as mime from 'mime-types';
 
 let server: http.Server | https.Server;
 
@@ -109,7 +110,7 @@ function requestHandler(request: IncomingMessage, response: ServerResponse) {
                 }
             } else if (stats.isFile()) {
                 const extension = path.extname(finalPath)
-                const mimeType = mime.getType(extension) || config.defaultToMime;
+                const mimeType = mime.lookup(extension) || config.defaultToMime;
                 response.writeHead(200, {"content-type" : mimeType});
                 fs.readFile(finalPath, (err, data) => {
                 if (err) {
