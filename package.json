@@ -2,7 +2,7 @@
   "name": "zephyrus-webserver",
   "description": "A simple webserver that supports directory listing.",
   "author": "Adrian Victor de Abreu Alves <adrianvictor@disroot.org>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "scripts": {
     "start": "ts-node zephyrus.ts",
