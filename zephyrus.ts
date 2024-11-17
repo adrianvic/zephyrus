@@ -22,8 +22,8 @@ if(config.useHTTPS) {
 function requestHandler(request: IncomingMessage, response: ServerResponse) {
     const parsed = url.parse(request.url || '/', true);
     const path_ = decodeURI(parsed.pathname || '/');
-    const serversidePath = path.join(config.serverRoot + path_);
-    const defaultPagePath = path.join(config.serverRoot + config.defaultPage);
+    const serversidePath = path.resolve(config.serverRoot + path_);
+    const defaultPagePath = path.resolve(config.serverRoot + config.defaultPage);
     const finalPath = (config.useDefaultPage && request.url == '/') ? path.normalize(defaultPagePath) : serversidePath;
     // console.log(finalPath)
 
@@ -71,7 +71,7 @@ function requestHandler(request: IncomingMessage, response: ServerResponse) {
         }
 
     // console.log(`Requested ${path_}, accessing ${config.useDefaultPage && request.url == '/' ? defaultPagePath : serversidePath}`)
-        if (!finalPath.startsWith(path.normalize(config.serverRoot))) {
+        if (!finalPath.startsWith(path.resolve(config.serverRoot))) {
             showError(403, undefined, `someone is trying to access files (${finalPath}) outside server root (${config.serverRoot})`)
             return;
         }
