@@ -1,5 +1,6 @@
 # Zephyrus
 Zephyrus is a *VERY* simple HTTP(S) webserver written in TypeScript. Take a look on our [wiki](https://git.disroot.org/adrianvictor/zephyrus/wiki) for setup instructions.
+![Zephyru's default page](https://git.disroot.org/adrianvictor/zephyrus/wiki)
 
 ## Main features
 - HTTPS support.
